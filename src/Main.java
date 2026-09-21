@@ -48,7 +48,7 @@ public class Main {
         int[] powtorzenia = new int[7];
         int iloscPowtorzen = 0;
 
-        for(int i = 0; i < iloscKostek; i++){
+       /* for(int i = 0; i < iloscKostek; i++){
 
             for(int j = i+1; j < iloscKostek; j++){
                 if(tablicaLiczb[i] == tablicaLiczb[j]){
@@ -57,7 +57,22 @@ public class Main {
                     iloscPowtorzen++;
                 }
             }
+        }*/
+
+        for (int i = 1; i < 7; i++) {
+            for (int j = 0; j < tablicaLiczb.length; j++) {
+                if(i == tablicaLiczb[j]){
+                    powtorzenia[i]++;
+                }
+            }
         }
+        for (int i = 0; i < powtorzenia.length; i++) {
+            if(powtorzenia[i]>1){
+                punkty = punkty + i*powtorzenia[i];
+            }
+        }
+
+
         //liczenie punktow z tablicy z powtorzeniami
        for(int i=0; i<iloscPowtorzen; i++){
             punkty += powtorzenia[i];
